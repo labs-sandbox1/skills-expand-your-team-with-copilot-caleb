@@ -728,6 +728,7 @@ footer {
 }
 
 /* Adjust user controls position when toggle is present */
+/* Right position: 60px = 40px (toggle button width) + 20px (spacing) */
 #user-controls {
   position: absolute;
   top: 10px;
