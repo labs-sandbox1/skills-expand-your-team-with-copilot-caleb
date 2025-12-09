@@ -267,6 +267,70 @@ section h3 {
   align-items: center;
 }
 
+/* Share container */
+.share-container {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-light);
+}
+
+.share-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.share-buttons {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.share-button {
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.share-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.share-button.facebook:hover {
+  background-color: #1877f2;
+  border-color: #1877f2;
+}
+
+.share-button.twitter:hover {
+  background-color: #1da1f2;
+  border-color: #1da1f2;
+}
+
+.share-button.email:hover {
+  background-color: #ea4335;
+  border-color: #ea4335;
+}
+
+.share-button.copy-link:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.share-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
 /* Buttons */
 .register-button {
   background: linear-gradient(145deg, var(--secondary), var(--secondary-dark));
@@ -454,6 +518,52 @@ button {
 /* Hidden class - critical for showing/hiding elements */
 .hidden {
   display: none !important;
+}
+
+/* Message notifications */
+.message {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1001;
+  max-width: 90%;
+  text-align: center;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.message.success {
+  background-color: var(--success-light);
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+
+.message.error {
+  background-color: var(--error-light);
+  color: var(--error);
+  border: 1px solid var(--error);
+}
+
+.message.info {
+  background-color: var(--info-light);
+  color: var(--info);
+  border: 1px solid var(--info);
 }
 
 /* More compact no-results message */
